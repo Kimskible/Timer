@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router'
 
 // import { HomePageRoutingModule } from './home-routing.module';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { ProgressBarModule } from "angular-progress-bar";
 
 
 @NgModule({
@@ -20,21 +21,22 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
         component: HomePage
       }
     ]),
-        NgCircleProgressModule.forRoot({
-          "radius": "94",
-          "maxPercent": "100",
-          "unitsFontSize": "20",
-          "outerStrokeWidth": 10,
-          "outerStrokeColor": "#c45fb6",
-          "innerStrokeColor": "#26785f",
-          "innerStrokeWidth": 5,
-          "titleFontSize": "40",
-          "titleFontWeight": "500",
-          "animationDuration": "3500",
-          "clockwise": false,
-        })
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animation: false,
+      responsive: true,
+      renderOnClick: false
+    }),
+
       ],
   declarations: [HomePage]
 
 })
 export class HomePageModule {}
+
+ 
